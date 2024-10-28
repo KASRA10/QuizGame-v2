@@ -51,6 +51,59 @@ class QuizGame extends StatelessWidget {
               )
             ], // End Of <Widget> Actions
           ),
+          body: SafeArea(
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: 168,
+                    height: 168,
+                    child: Image.asset(
+                      'images/orbitQuiz.png',
+                      semanticLabel: 'An Orbit/earth having badge of Question',
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(
+                      15.5,
+                    ),
+                    child: ElevatedButton.icon(
+                      onPressed: () {},
+                      label: Text(
+                        'Start',
+                        style: TextStyle(
+                          fontFamily: 'LexendExa',
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,
+                        elevation: 0.0,
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 115.5,
+                          vertical: 10.0,
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(
+                              25.0,
+                            ),
+                          ),
+                          side: BorderSide(
+                            color: Colors.black,
+                            width: 2.0,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ], // End Of Column Children
+              ),
+            ),
+          ),
         ),
       ),
     );
