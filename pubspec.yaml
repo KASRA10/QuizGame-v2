@@ -2,11 +2,8 @@ name: quiz_game_v2
 description: "A Simple Quiz Game By Using Classes And Basic Pillars Of OOP. It Has reset Button And Alert As Well"
 
 homepage: https://github.com/KASRA10/QuizGame-v2.git
-
 issue_tracker: https://github.com/KASRA10/QuizGame-v2.git
-
 documentation: https://github.com/KASRA10/QuizGame-v2.git
-
 repository: https://github.com/KASRA10/QuizGame-v2.git
 
 publish_to: "none"
@@ -34,9 +31,8 @@ flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
 
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-
-  #         style: italic
+  fonts:
+    - family: LexendExa
+      fonts:
+        - asset: fonts/LexendExa.ttf
+          style: normal
