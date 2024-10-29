@@ -18,8 +18,8 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.8
+  flame_audio: ^2.10.5
   fluttertoast: ^8.2.8
-  audioplayers: ^6.1.0
   hugeicons: ^0.0.7
 
 dev_dependencies:

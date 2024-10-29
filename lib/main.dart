@@ -1,13 +1,12 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:audioplayers/audioplayers.dart';
 import './src/app_toast_message.dart';
 import 'package:hugeicons/hugeicons.dart';
 import './src/category_page.dart';
 
-void main() => runApp(
-      const MaterialApp(
+void main() async => runApp(
+      MaterialApp(
         debugShowCheckedModeBanner: false,
         color: Colors.white,
         home: QuizGame(),
@@ -16,6 +15,7 @@ void main() => runApp(
 
 class QuizGame extends StatelessWidget {
   const QuizGame({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
