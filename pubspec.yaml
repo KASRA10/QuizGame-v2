@@ -19,6 +19,7 @@ dependencies:
 
   cupertino_icons: ^1.0.8
   fluttertoast: ^8.2.8
+  audioplayers: ^6.1.0
   hugeicons: ^0.0.7
 
 dev_dependencies:
@@ -32,6 +33,7 @@ flutter:
 
   assets:
     - images/
+    - assets/
 
   fonts:
     - family: LexendExa
