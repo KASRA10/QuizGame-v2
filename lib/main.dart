@@ -116,6 +116,17 @@ class QuizGame extends StatelessWidget {
             ),
           ),
         ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          backgroundColor: Colors.white,
+          elevation: 0.0,
+          splashColor: Colors.black38,
+          child: Icon(
+            HugeIcons.strokeRoundedMusicNote04,
+            semanticLabel: 'A Not Of Music Icon',
+          ),
+        ),
       ),
     );
   }

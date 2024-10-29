@@ -8,7 +8,7 @@ class CategoryPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.yellow,
         toolbarHeight: 70.0,
         centerTitle: true,
         leading: BackButton(
