@@ -5,9 +5,9 @@ import 'package:rflutter_alert/rflutter_alert.dart';
 void myLoginAlert(BuildContext context) => Alert(
       context: context,
       image: Image.asset(
-        '../images/orbitQuiz.png',
-        width: 100.0,
-        height: 100.0,
+        'images/orbitQuiz.png',
+        width: 68.0,
+        height: 68.0,
       ),
       title: "LOGIN",
       content: Column(
