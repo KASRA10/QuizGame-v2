@@ -47,13 +47,13 @@ class QuizGame extends StatelessWidget {
           actions: [
             IconButton(
               onPressed: () => showAppToast(
-                'coming soon...'.toUpperCase(),
+                'coming soon...!'.toUpperCase(),
               ),
               icon: const HugeIcon(
-                icon: HugeIcons.strokeRoundedUserAccount,
+                icon: HugeIcons.strokeRoundedSetting06,
                 color: Colors.black,
               ),
-              tooltip: 'Go To Account Center',
+              tooltip: 'Go To Setting Center',
               enableFeedback: true,
             )
           ], // End Of <Widget> Actions
@@ -124,9 +124,11 @@ class QuizGame extends StatelessWidget {
           elevation: 0.0,
           backgroundColor: Colors.white,
           splashColor: Colors.grey.shade50,
+          tooltip: 'Go To Account Center',
+          enableFeedback: true,
           child: Icon(
-            HugeIcons.strokeRoundedMusicNote04,
-            semanticLabel: 'A Not Of Music Icon',
+            HugeIcons.strokeRoundedProfile02,
+            semanticLabel: 'User Profile Info Lines Icon',
           ),
         ),
       ),
