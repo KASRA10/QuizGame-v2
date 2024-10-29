@@ -1,11 +1,13 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import './src/app_toast_message.dart';
 import 'package:hugeicons/hugeicons.dart';
-import './src/category_page.dart';
 
-void main() async => runApp(
+import './src/app_toast_message.dart';
+import './src/category_page.dart';
+import 'src/my_alerts.dart';
+
+void main() => runApp(
       MaterialApp(
         debugShowCheckedModeBanner: false,
         color: Colors.white,
@@ -118,10 +120,10 @@ class QuizGame extends StatelessWidget {
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          backgroundColor: Colors.white,
+          onPressed: () => myLoginAlert(context),
           elevation: 0.0,
-          splashColor: Colors.black38,
+          backgroundColor: Colors.white,
+          splashColor: Colors.grey.shade50,
           child: Icon(
             HugeIcons.strokeRoundedMusicNote04,
             semanticLabel: 'A Not Of Music Icon',

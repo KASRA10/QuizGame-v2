@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 class CategoryPage extends StatelessWidget {
@@ -18,10 +20,11 @@ class CategoryPage extends StatelessWidget {
         title: const Text(
           'Back',
           style: TextStyle(
-              fontFamily: 'LexendExa',
-              fontSize: 22,
-              fontWeight: FontWeight.w500,
-              color: Colors.white),
+            fontFamily: 'LexendExa',
+            fontSize: 22,
+            fontWeight: FontWeight.w500,
+            color: Colors.white,
+          ),
         ),
       ),
     );
