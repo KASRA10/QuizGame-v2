@@ -135,6 +135,23 @@ void searchAlert(BuildContext context) => Alert(
       ),
       content: Column(
         children: [
+          Padding(
+            padding: const EdgeInsets.all(
+              15.0,
+            ),
+            child: SizedBox(
+              width: 250.0,
+              child: TextField(
+                decoration: InputDecoration(
+                  icon: Icon(
+                    HugeIcons.strokeRoundedSearchCircle,
+                    semanticLabel: 'Search Icon',
+                  ),
+                  labelText: 'Search Categories',
+                ),
+              ),
+            ),
+          ),
           Text(
             'This Feature Is Not Available Right Now!',
             textAlign: TextAlign.center,
