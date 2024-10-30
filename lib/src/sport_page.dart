@@ -45,7 +45,7 @@ class SportQuiz extends StatelessWidget {
                   25.0,
                 ),
                 child: Text(
-                  'In London, UK, if you happen to die in the House of Parliament, you are technically entitled to a state funeral, because the building is considered too sacred a place.',
+                  '1) In London, UK, if you happen to die in the House of Parliament, you are technically entitled to a state funeral, because the building is considered too sacred a place.',
                   style: TextStyle(
                     fontFamily: 'LexendExa',
                     fontSize: 18,
@@ -134,7 +134,44 @@ class SportQuiz extends StatelessWidget {
                     ),
                   ),
                 ], // End Of Inner Row CHildren
-              )
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 15.0,
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 10.0,
+                        vertical: 10.0,
+                      ),
+                      child: Text(
+                        'Number Of False: 0',
+                        style: TextStyle(
+                          fontFamily: 'LexendExa',
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 10.0,
+                        vertical: 10.0,
+                      ),
+                      child: Text(
+                        'Number Of True: 0',
+                        style: TextStyle(
+                          fontFamily: 'LexendExa',
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ], // End Of Inner Row CHildren
+                ),
+              ),
             ], // Children of Column
           ),
         ),
