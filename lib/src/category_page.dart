@@ -3,6 +3,10 @@
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
 import './my_alerts.dart';
+import './sport_page.dart';
+import './movie_page.dart';
+import './food_page.dart';
+import './technology_page.dart';
 
 class CategoryPage extends StatelessWidget {
   const CategoryPage({super.key});
@@ -32,8 +36,8 @@ class CategoryPage extends StatelessWidget {
             'Quiz Categories',
             style: TextStyle(
               fontFamily: 'LexendExa',
-              fontSize: 22,
-              fontWeight: FontWeight.w500,
+              fontSize: 20,
+              fontWeight: FontWeight.w700,
               color: Colors.grey[300],
             ),
           ),
@@ -72,7 +76,12 @@ class CategoryPage extends StatelessWidget {
                 child: SizedBox(
                   width: 200.0,
                   child: ElevatedButton.icon(
-                    onPressed: () {},
+                    onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SportQuiz(),
+                      ),
+                    ),
                     label: Text(
                       'Sport',
                       style: TextStyle(
@@ -114,7 +123,12 @@ class CategoryPage extends StatelessWidget {
                 child: SizedBox(
                   width: 200.0,
                   child: ElevatedButton.icon(
-                    onPressed: () {},
+                    onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MovieQuiz(),
+                      ),
+                    ),
                     label: Text(
                       'Movie',
                       style: TextStyle(
@@ -156,7 +170,12 @@ class CategoryPage extends StatelessWidget {
                 child: SizedBox(
                   width: 200.0,
                   child: ElevatedButton.icon(
-                    onPressed: () {},
+                    onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const FoodQuiz(),
+                      ),
+                    ),
                     label: Text(
                       'Food',
                       style: TextStyle(
@@ -197,7 +216,12 @@ class CategoryPage extends StatelessWidget {
                 child: SizedBox(
                   width: 200.0,
                   child: ElevatedButton.icon(
-                    onPressed: () {},
+                    onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const TechnologyQuiz(),
+                      ),
+                    ),
                     label: Text(
                       'Technology',
                       style: TextStyle(
