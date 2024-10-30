@@ -54,28 +54,80 @@ class SportQuiz extends StatelessWidget {
                 ),
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  ElevatedButton.icon(
-                    onPressed: () {},
-                    label: Text(
-                      'False',
-                      style: TextStyle(
-                        fontFamily: 'LexendExa',
-                        color: Colors.black,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10.0,
+                    ),
+                    child: ElevatedButton.icon(
+                      onPressed: () {},
+                      iconAlignment: IconAlignment.end,
+                      icon: Icon(
+                        HugeIcons.strokeRoundedCheckUnread03,
+                        color: Colors.white,
+                        semanticLabel:
+                            'Cross/ close - checked Icon demonstrate false answer',
+                      ),
+                      label: Text(
+                        'False',
+                        style: TextStyle(
+                          fontFamily: 'LexendExa',
+                          color: Colors.white,
+                        ),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.red,
+                        shadowColor: Colors.red,
+                        elevation: 4.0,
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 35.5,
+                          vertical: 10.0,
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(
+                              25.0,
+                            ),
+                          ),
+                        ),
                       ),
                     ),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green,
-                      shadowColor: Colors.green,
-                      elevation: 4.0,
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 50.5,
-                        vertical: 10.0,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10.0,
+                    ),
+                    child: ElevatedButton.icon(
+                      onPressed: () {},
+                      iconAlignment: IconAlignment.end,
+                      icon: Icon(
+                        HugeIcons.strokeRoundedCheckmarkBadge01,
+                        color: Colors.white,
+                        semanticLabel:
+                            'Cross/ close - checked Icon demonstrate false answer',
                       ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(
-                            25.0,
+                      label: Text(
+                        'False',
+                        style: TextStyle(
+                          fontFamily: 'LexendExa',
+                          color: Colors.white,
+                        ),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green,
+                        shadowColor: Colors.green,
+                        elevation: 4.0,
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 35.5,
+                          vertical: 10.0,
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(
+                              25.0,
+                            ),
                           ),
                         ),
                       ),
