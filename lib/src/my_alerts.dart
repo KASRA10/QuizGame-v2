@@ -82,11 +82,11 @@ void settingAlert(BuildContext context) => Alert(
         semanticLabel: 'Exit Icon With Left Back Icon',
       ),
       title: 'Setting',
-      image: Icon(
-        HugeIcons.strokeRoundedSettingError03,
-        color: Colors.grey.shade900,
-        size: 150,
-        semanticLabel: 'Setting Icon Indicates Setting Area',
+      image: Image.asset(
+        'images/setting_image.png',
+        semanticLabel: 'Setting icon indicates Accessing To Options',
+        width: 68.0,
+        height: 68.0,
       ),
       content: Column(
         children: [
@@ -117,3 +117,48 @@ void settingAlert(BuildContext context) => Alert(
       ],
     ).show();
 // End Of Setting ALert
+
+// Search Alert Alert
+void searchAlert(BuildContext context) => Alert(
+      context: context,
+      closeIcon: Icon(
+        Icons.subdirectory_arrow_left_rounded,
+        color: Colors.red,
+        semanticLabel: 'Exit Icon With Left Back Icon',
+      ),
+      title: 'Online Search',
+      image: Image.asset(
+        'images/search_alert_image.png',
+        semanticLabel: 'Quiz Search Image',
+        width: 68.0,
+        height: 68.0,
+      ),
+      content: Column(
+        children: [
+          Text(
+            'This Feature Is Not Available Right Now!',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'LexendExa',
+              fontSize: 16,
+              textBaseline: TextBaseline.alphabetic,
+            ),
+          ),
+        ], // End Of Children
+      ),
+      buttons: [
+        DialogButton(
+          onPressed: () => Navigator.pop(context),
+          color: Colors.black,
+          child: Text(
+            "OK!",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 16,
+              fontFamily: 'LexendExa',
+            ),
+          ),
+        ),
+      ],
+    ).show();
+// End Of Search Alert
