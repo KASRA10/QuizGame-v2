@@ -5,7 +5,7 @@ import 'package:hugeicons/hugeicons.dart';
 
 import './src/app_toast_message.dart';
 import './src/category_page.dart';
-import 'src/my_alerts.dart';
+import './src/my_alerts.dart';
 
 void main() => runApp(
       MaterialApp(

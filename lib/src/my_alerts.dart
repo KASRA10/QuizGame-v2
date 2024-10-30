@@ -72,3 +72,48 @@ void myLoginAlert(BuildContext context) => Alert(
       ],
     ).show();
 // End Login Alert Button
+
+// SettingAlert
+void settingAlert(BuildContext context) => Alert(
+      context: context,
+      closeIcon: Icon(
+        Icons.exit_to_app,
+        color: Colors.red,
+        semanticLabel: 'Exit Icon With Left Back Icon',
+      ),
+      title: 'Setting',
+      image: Icon(
+        HugeIcons.strokeRoundedSettingError03,
+        color: Colors.grey.shade900,
+        size: 150,
+        semanticLabel: 'Setting Icon Indicates Setting Area',
+      ),
+      content: Column(
+        children: [
+          Text(
+            'This Feature Is Not Available Right Now!',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'LexendExa',
+              fontSize: 16,
+              textBaseline: TextBaseline.alphabetic,
+            ),
+          ),
+        ], // End Of Children
+      ),
+      buttons: [
+        DialogButton(
+          onPressed: () => Navigator.pop(context),
+          color: Colors.black,
+          child: Text(
+            "OK!",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 16,
+              fontFamily: 'LexendExa',
+            ),
+          ),
+        ),
+      ],
+    ).show();
+// End Of Setting ALert
