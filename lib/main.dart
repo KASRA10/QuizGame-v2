@@ -93,11 +93,17 @@ class QuizGame extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                       ),
                     ),
+                    iconAlignment: IconAlignment.end,
+                    icon: Icon(
+                      HugeIcons.strokeRoundedFlag01,
+                      color: Colors.black,
+                      semanticLabel: 'A flag Displays Start Point Of The Game',
+                    ),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
                       elevation: 0.0,
                       padding: EdgeInsets.symmetric(
-                        horizontal: 115.5,
+                        horizontal: 90.5,
                         vertical: 10.0,
                       ),
                       shape: RoundedRectangleBorder(

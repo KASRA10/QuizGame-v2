@@ -35,6 +35,57 @@ class SportQuiz extends StatelessWidget {
             ),
           ), // End Of <Widget> Actions
         ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(
+                  25.0,
+                ),
+                child: Text(
+                  'In London, UK, if you happen to die in the House of Parliament, you are technically entitled to a state funeral, because the building is considered too sacred a place.',
+                  style: TextStyle(
+                    fontFamily: 'LexendExa',
+                    fontSize: 18,
+                    color: Colors.white70,
+                  ),
+                ),
+              ),
+              Row(
+                children: [
+                  ElevatedButton.icon(
+                    onPressed: () {},
+                    label: Text(
+                      'False',
+                      style: TextStyle(
+                        fontFamily: 'LexendExa',
+                        color: Colors.black,
+                      ),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.green,
+                      shadowColor: Colors.green,
+                      elevation: 4.0,
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 50.5,
+                        vertical: 10.0,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(
+                            25.0,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ], // End Of Inner Row CHildren
+              )
+            ], // Children of Column
+          ),
+        ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         floatingActionButton: FloatingActionButton(
           onPressed: () => reStartAlert(context),
