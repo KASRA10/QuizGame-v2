@@ -268,6 +268,7 @@ class CategoryPage extends StatelessWidget {
           enableFeedback: true,
           child: Icon(
             HugeIcons.strokeRoundedSearchArea,
+            color: Colors.black,
             semanticLabel: 'Search Icon To Search Online Categories',
           ),
         ),
