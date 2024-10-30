@@ -183,11 +183,6 @@ void searchAlert(BuildContext context) => Alert(
 // Restart Alert
 void reStartAlert(BuildContext context) => Alert(
       context: context,
-      closeIcon: Icon(
-        Icons.subdirectory_arrow_left_rounded,
-        color: Colors.red,
-        semanticLabel: 'Exit Icon With Left Back Icon',
-      ),
       title: 'Reset Game!',
       image: Image.asset(
         'images/reset_game.png',

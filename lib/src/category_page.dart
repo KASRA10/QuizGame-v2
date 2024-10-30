@@ -223,7 +223,7 @@ class CategoryPage extends StatelessWidget {
                       ),
                     ),
                     label: Text(
-                      'Technology',
+                      'Tech',
                       style: TextStyle(
                         fontFamily: 'LexendExa',
                         fontSize: 14,
