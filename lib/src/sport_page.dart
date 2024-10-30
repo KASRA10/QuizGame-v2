@@ -40,12 +40,18 @@ class SportQuiz extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Image.asset(
+                'images/TimeLoadingAnimation.gif',
+                width: 100,
+                height: 100,
+              ),
               Padding(
                 padding: const EdgeInsets.all(
                   25.0,
                 ),
                 child: Text(
                   '1) In London, UK, if you happen to die in the House of Parliament, you are technically entitled to a state funeral, because the building is considered too sacred a place.',
+                  textAlign: TextAlign.left,
                   style: TextStyle(
                     fontFamily: 'LexendExa',
                     fontSize: 18,

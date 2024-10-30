@@ -17,7 +17,7 @@ class CategoryPage extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.grey[300],
         appBar: AppBar(
-          backgroundColor: Colors.grey.shade900,
+          backgroundColor: Colors.black,
           shadowColor: Colors.grey.shade900,
           elevation: 15.0,
           toolbarHeight: 70.0,
