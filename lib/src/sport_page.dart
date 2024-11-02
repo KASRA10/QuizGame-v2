@@ -15,20 +15,17 @@ class _SportQuizState extends State<SportQuiz> {
   QuestionCenterIntelligence mainSport =
       QuestionCenterIntelligence(category: 'sport');
 
-  int falseNumbers = 0;
-  int trueNumbers = 0;
-
   void checkAnswer(bool userAnswer) {
     setState(() {
       if (mainSport.endChecker() == true) {
         mainSport.reset();
-        falseNumbers = 0;
-        trueNumbers = 0;
+        mainSport.getFalseNumber();
+        mainSport.getTrueNumber();
       } else {
         if (userAnswer == mainSport.currentAnswer()) {
-          trueNumbers++;
+          mainSport.trueAnswer();
         } else {
-          falseNumbers++;
+          mainSport.falseAnswer();
         }
       }
     });
@@ -195,7 +192,7 @@ class _SportQuizState extends State<SportQuiz> {
                         vertical: 10.0,
                       ),
                       child: Text(
-                        'Number Of False: $falseNumbers',
+                        'Number Of False: ${mainSport.getFalseNumber()}',
                         style: TextStyle(
                           fontFamily: 'LexendExa',
                           color: Colors.white,
@@ -208,7 +205,7 @@ class _SportQuizState extends State<SportQuiz> {
                         vertical: 10.0,
                       ),
                       child: Text(
-                        'Number Of True: $trueNumbers',
+                        'Number Of True: ${mainSport.getTrueNumber()}',
                         style: TextStyle(
                           fontFamily: 'LexendExa',
                           color: Colors.white,

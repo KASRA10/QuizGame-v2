@@ -10,6 +10,8 @@ class QuestionCenterIntelligence {
   int _questionRow = 1;
   bool _finishStatus = false;
   late final List<QuestionStructure> mainQuestionList;
+  int _falseNumbers = 0;
+  int _trueNumbers = 0;
 
   QuestionCenterIntelligence({required category}) {
     category = category;
@@ -48,13 +50,26 @@ class QuestionCenterIntelligence {
     }
   }
 
+  void trueAnswer() {
+    _trueNumbers++;
+  }
+
+  void falseAnswer() {
+    _falseNumbers++;
+  }
+
   void reset() {
     _questionNumber = -1;
     _questionRow = 0;
     _finishStatus = false;
+    _falseNumbers = 0;
+    _trueNumbers = 0;
   }
 
   String nextQuestion() => mainQuestionList[_questionNumber].question;
   bool currentAnswer() => mainQuestionList[_questionNumber].answer;
   int getQuestionRow() => _questionRow;
+
+  int getFalseNumber() => _falseNumbers;
+  int getTrueNumber() => _trueNumbers;
 }
