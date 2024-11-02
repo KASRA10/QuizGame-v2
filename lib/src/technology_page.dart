@@ -13,7 +13,7 @@ class TechnologyQuiz extends StatefulWidget {
 
 class _TechnologyQuizState extends State<TechnologyQuiz> {
   QuestionCenterIntelligence mainTechnology =
-      QuestionCenterIntelligence(category: 'Technology');
+      QuestionCenterIntelligence(category: 'technology');
 
   void checkAnswer(bool userAnswer) {
     setState(() {
