@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
 
 import './my_alerts.dart';
+import './question_center_intelligence.dart';
 
 class SportQuiz extends StatelessWidget {
   const SportQuiz({super.key});
