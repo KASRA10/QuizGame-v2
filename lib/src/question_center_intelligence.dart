@@ -1,5 +1,3 @@
-import 'package:flutter/foundation.dart';
-
 import './question_structure.dart';
 import './sport_questions_list.dart';
 import './movie_questions_list.dart';
@@ -12,8 +10,6 @@ class QuestionCenterIntelligence {
   int _questionRow = 1;
   bool _finishStatus = false;
   late final List<QuestionStructure> mainQuestionList;
-  int _numberOfTrue = 0;
-  int _numberOfFalse = 0;
 
   QuestionCenterIntelligence({required category}) {
     category = category;
@@ -53,16 +49,12 @@ class QuestionCenterIntelligence {
   }
 
   void reset() {
-    _questionNumber = 0;
-    _questionRow = 1;
+    _questionNumber = -1;
+    _questionRow = 0;
     _finishStatus = false;
-    _numberOfTrue = 0;
-    _numberOfFalse = 0;
   }
 
   String nextQuestion() => mainQuestionList[_questionNumber].question;
   bool currentAnswer() => mainQuestionList[_questionNumber].answer;
   int getQuestionRow() => _questionRow;
-  int countNumberOfTrue() => _numberOfTrue++;
-  int countNumberOfFalse() => _numberOfFalse++;
 }
