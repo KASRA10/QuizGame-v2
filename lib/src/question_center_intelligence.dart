@@ -1,6 +1,5 @@
 import './question_structure.dart';
 import './sport_questions_list.dart';
-import './movie_questions_list.dart';
 import './food_questions_list.dart';
 import './technology_questions_list.dart';
 
@@ -16,8 +15,6 @@ class QuestionCenterIntelligence {
   QuestionCenterIntelligence({required this.category}) {
     if (category == 'sport') {
       mainQuestionList = sportQuestionsList;
-    } else if (category == 'movie') {
-      mainQuestionList == movieQuestionsList;
     } else if (category == 'food') {
       mainQuestionList = foodQuestionsList;
     } else if (category == 'technology') {

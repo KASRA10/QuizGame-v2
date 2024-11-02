@@ -5,7 +5,6 @@ import 'package:hugeicons/hugeicons.dart';
 
 import './my_alerts.dart';
 import './sport_page.dart';
-import './movie_page.dart';
 import './food_page.dart';
 import './technology_page.dart';
 
@@ -103,53 +102,6 @@ class _CategoryPageState extends State<CategoryPage> {
                       color: Colors.grey.shade900,
                       semanticLabel:
                           'Soccer/ Football ball indicates sport category',
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.transparent,
-                      elevation: 0.0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(
-                            25.0,
-                          ),
-                        ),
-                        side: BorderSide(
-                          color: Colors.grey.shade900,
-                          width: 2.0,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(
-                  5.0,
-                ),
-                child: SizedBox(
-                  width: 200.0,
-                  child: ElevatedButton.icon(
-                    onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const MovieQuiz(),
-                      ),
-                    ),
-                    label: Text(
-                      'Movie',
-                      style: TextStyle(
-                        fontFamily: 'LexendExa',
-                        fontSize: 14,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.grey.shade900,
-                      ),
-                    ),
-                    iconAlignment: IconAlignment.end,
-                    icon: Icon(
-                      HugeIcons.strokeRoundedCameraVideo,
-                      color: Colors.grey.shade900,
-                      semanticLabel:
-                          'A Cinema Camera with stand indicating Cinema Category',
                     ),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.transparent,
