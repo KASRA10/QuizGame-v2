@@ -23,8 +23,6 @@ class QuestionCenterIntelligence {
       mainQuestionList = foodQuestionsList;
     } else if (category == 'technology') {
       mainQuestionList = technologyQuestionsList;
-    } else {
-      mainQuestionList = [];
     }
   }
 

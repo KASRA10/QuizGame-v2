@@ -231,3 +231,26 @@ void reStartAlert(BuildContext context) => Alert(
       ], // List Of Buttons
     ).show();
 // End Of Restart Alert
+
+// End Alert
+void endAlert(context) => Alert(
+      context: context,
+      type: AlertType.none,
+      title: "Game Is Over!",
+      desc: "All Questions Have Been Answered!",
+      buttons: [
+        DialogButton(
+          onPressed: () => Navigator.pop(context),
+          width: 120,
+          color: Colors.black,
+          child: Text(
+            "Try Again",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 20,
+            ),
+          ),
+        ),
+      ],
+    ).show();
+//End Of End Alert

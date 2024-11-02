@@ -18,6 +18,7 @@ class _FoodQuizState extends State<FoodQuiz> {
   void checkAnswer(bool userAnswer) {
     setState(() {
       if (mainFood.endChecker() == true) {
+        endAlert(context);
         mainFood.reset();
         mainFood.getFalseNumber();
         mainFood.getTrueNumber();

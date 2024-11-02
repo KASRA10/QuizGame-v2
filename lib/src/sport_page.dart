@@ -18,6 +18,7 @@ class _SportQuizState extends State<SportQuiz> {
   void checkAnswer(bool userAnswer) {
     setState(() {
       if (mainSport.endChecker() == true) {
+        endAlert(context);
         mainSport.reset();
         mainSport.getFalseNumber();
         mainSport.getTrueNumber();

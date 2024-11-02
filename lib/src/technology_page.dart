@@ -18,6 +18,7 @@ class _TechnologyQuizState extends State<TechnologyQuiz> {
   void checkAnswer(bool userAnswer) {
     setState(() {
       if (mainTechnology.endChecker() == true) {
+        endAlert(context);
         mainTechnology.reset();
         mainTechnology.getFalseNumber();
         mainTechnology.getTrueNumber();

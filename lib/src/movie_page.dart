@@ -18,6 +18,7 @@ class _MovieQuizState extends State<MovieQuiz> {
   void checkAnswer(bool userAnswer) {
     setState(() {
       if (mainMovie.endChecker() == true) {
+        endAlert(context);
         mainMovie.reset();
         mainMovie.getFalseNumber();
         mainMovie.getTrueNumber();
