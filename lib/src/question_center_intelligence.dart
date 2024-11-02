@@ -24,7 +24,7 @@ class QuestionCenterIntelligence {
     } else if (category == 'technology') {
       mainQuestionList = technologyQuestionsList;
     } else {
-      mainQuestionList;
+      mainQuestionList = [];
     }
   }
 

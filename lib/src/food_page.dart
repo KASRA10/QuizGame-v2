@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
 
 import './my_alerts.dart';
+import './question_center_intelligence.dart';
 
 class FoodQuiz extends StatefulWidget {
   const FoodQuiz({super.key});
@@ -11,6 +12,25 @@ class FoodQuiz extends StatefulWidget {
 }
 
 class _FoodQuizState extends State<FoodQuiz> {
+  QuestionCenterIntelligence mainFood =
+      QuestionCenterIntelligence(category: 'food');
+
+  void checkAnswer(bool userAnswer) {
+    setState(() {
+      if (mainFood.endChecker() == true) {
+        mainFood.reset();
+        mainFood.getFalseNumber();
+        mainFood.getTrueNumber();
+      } else {
+        if (userAnswer == mainFood.currentAnswer()) {
+          mainFood.trueAnswer();
+        } else {
+          mainFood.falseAnswer();
+        }
+      }
+    });
+  } // End Of CheckUser Answer
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -55,7 +75,7 @@ class _FoodQuizState extends State<FoodQuiz> {
                   25.0,
                 ),
                 child: Text(
-                  '1) In London, UK, if you happen to die in the House of Parliament, you are technically entitled to a state funeral, because the building is considered too sacred a place.',
+                  '${mainFood.getQuestionRow()}) ${mainFood.nextQuestion()}',
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     fontFamily: 'LexendExa',
@@ -73,7 +93,13 @@ class _FoodQuizState extends State<FoodQuiz> {
                       horizontal: 10.0,
                     ),
                     child: ElevatedButton.icon(
-                      onPressed: () {},
+                      onPressed: () {
+                        checkAnswer(false);
+                        setState(() {
+                          mainFood.nextQuestionNumber();
+                          mainFood.nextNumberOfRow();
+                        });
+                      },
                       iconAlignment: IconAlignment.end,
                       icon: Icon(
                         HugeIcons.strokeRoundedCheckUnread03,
@@ -111,7 +137,13 @@ class _FoodQuizState extends State<FoodQuiz> {
                       horizontal: 10.0,
                     ),
                     child: ElevatedButton.icon(
-                      onPressed: () {},
+                      onPressed: () {
+                        checkAnswer(true);
+                        setState(() {
+                          mainFood.nextQuestionNumber();
+                          mainFood.nextNumberOfRow();
+                        });
+                      },
                       iconAlignment: IconAlignment.end,
                       icon: Icon(
                         HugeIcons.strokeRoundedCheckmarkBadge01,
@@ -120,7 +152,7 @@ class _FoodQuizState extends State<FoodQuiz> {
                             'Cross/ close - checked Icon demonstrate false answer',
                       ),
                       label: Text(
-                        'False',
+                        'True',
                         style: TextStyle(
                           fontFamily: 'LexendExa',
                           color: Colors.white,
@@ -160,7 +192,7 @@ class _FoodQuizState extends State<FoodQuiz> {
                         vertical: 10.0,
                       ),
                       child: Text(
-                        'Number Of False: 0',
+                        'Number Of False: ${mainFood.getFalseNumber()}',
                         style: TextStyle(
                           fontFamily: 'LexendExa',
                           color: Colors.white,
@@ -173,7 +205,7 @@ class _FoodQuizState extends State<FoodQuiz> {
                         vertical: 10.0,
                       ),
                       child: Text(
-                        'Number Of True: 0',
+                        'Number Of True: ${mainFood.getTrueNumber()}',
                         style: TextStyle(
                           fontFamily: 'LexendExa',
                           color: Colors.white,

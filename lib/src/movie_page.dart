@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
 
 import './my_alerts.dart';
+import './question_center_intelligence.dart';
 
 class MovieQuiz extends StatefulWidget {
   const MovieQuiz({super.key});
@@ -11,6 +12,25 @@ class MovieQuiz extends StatefulWidget {
 }
 
 class _MovieQuizState extends State<MovieQuiz> {
+  QuestionCenterIntelligence mainMovie =
+      QuestionCenterIntelligence(category: 'movie');
+
+  void checkAnswer(bool userAnswer) {
+    setState(() {
+      if (mainMovie.endChecker() == true) {
+        mainMovie.reset();
+        mainMovie.getFalseNumber();
+        mainMovie.getTrueNumber();
+      } else {
+        if (userAnswer == mainMovie.currentAnswer()) {
+          mainMovie.trueAnswer();
+        } else {
+          mainMovie.falseAnswer();
+        }
+      }
+    });
+  } // End Of CheckUser Answer
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -55,7 +75,7 @@ class _MovieQuizState extends State<MovieQuiz> {
                   25.0,
                 ),
                 child: Text(
-                  '1) In London, UK, if you happen to die in the House of Parliament, you are technically entitled to a state funeral, because the building is considered too sacred a place.',
+                  '${mainMovie.getQuestionRow()}) ${mainMovie.nextQuestion()}',
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     fontFamily: 'LexendExa',
@@ -73,7 +93,13 @@ class _MovieQuizState extends State<MovieQuiz> {
                       horizontal: 10.0,
                     ),
                     child: ElevatedButton.icon(
-                      onPressed: () {},
+                      onPressed: () {
+                        checkAnswer(false);
+                        setState(() {
+                          mainMovie.nextQuestionNumber();
+                          mainMovie.nextNumberOfRow();
+                        });
+                      },
                       iconAlignment: IconAlignment.end,
                       icon: Icon(
                         HugeIcons.strokeRoundedCheckUnread03,
@@ -111,7 +137,13 @@ class _MovieQuizState extends State<MovieQuiz> {
                       horizontal: 10.0,
                     ),
                     child: ElevatedButton.icon(
-                      onPressed: () {},
+                      onPressed: () {
+                        checkAnswer(true);
+                        setState(() {
+                          mainMovie.nextQuestionNumber();
+                          mainMovie.nextNumberOfRow();
+                        });
+                      },
                       iconAlignment: IconAlignment.end,
                       icon: Icon(
                         HugeIcons.strokeRoundedCheckmarkBadge01,
@@ -120,7 +152,7 @@ class _MovieQuizState extends State<MovieQuiz> {
                             'Cross/ close - checked Icon demonstrate false answer',
                       ),
                       label: Text(
-                        'False',
+                        'True',
                         style: TextStyle(
                           fontFamily: 'LexendExa',
                           color: Colors.white,
@@ -160,7 +192,7 @@ class _MovieQuizState extends State<MovieQuiz> {
                         vertical: 10.0,
                       ),
                       child: Text(
-                        'Number Of False: 0',
+                        'Number Of False: ${mainMovie.getFalseNumber()}',
                         style: TextStyle(
                           fontFamily: 'LexendExa',
                           color: Colors.white,
@@ -173,7 +205,7 @@ class _MovieQuizState extends State<MovieQuiz> {
                         vertical: 10.0,
                       ),
                       child: Text(
-                        'Number Of True: 0',
+                        'Number Of True: ${mainMovie.getTrueNumber()}',
                         style: TextStyle(
                           fontFamily: 'LexendExa',
                           color: Colors.white,

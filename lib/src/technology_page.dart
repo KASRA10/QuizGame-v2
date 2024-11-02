@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
 
 import './my_alerts.dart';
+import './question_center_intelligence.dart';
 
 class TechnologyQuiz extends StatefulWidget {
   const TechnologyQuiz({super.key});
@@ -11,6 +12,25 @@ class TechnologyQuiz extends StatefulWidget {
 }
 
 class _TechnologyQuizState extends State<TechnologyQuiz> {
+  QuestionCenterIntelligence mainTechnology =
+      QuestionCenterIntelligence(category: 'Technology');
+
+  void checkAnswer(bool userAnswer) {
+    setState(() {
+      if (mainTechnology.endChecker() == true) {
+        mainTechnology.reset();
+        mainTechnology.getFalseNumber();
+        mainTechnology.getTrueNumber();
+      } else {
+        if (userAnswer == mainTechnology.currentAnswer()) {
+          mainTechnology.trueAnswer();
+        } else {
+          mainTechnology.falseAnswer();
+        }
+      }
+    });
+  } // End Of CheckUser Answer
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -31,7 +51,7 @@ class _TechnologyQuizState extends State<TechnologyQuiz> {
             enableFeedback: true,
           ),
           title: const Text(
-            'Tech Questions',
+            'Technology Questions',
             style: TextStyle(
               fontFamily: 'LexendExa',
               fontSize: 18,
@@ -55,7 +75,7 @@ class _TechnologyQuizState extends State<TechnologyQuiz> {
                   25.0,
                 ),
                 child: Text(
-                  '1) In London, UK, if you happen to die in the House of Parliament, you are technically entitled to a state funeral, because the building is considered too sacred a place.',
+                  '${mainTechnology.getQuestionRow()}) ${mainTechnology.nextQuestion()}',
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     fontFamily: 'LexendExa',
@@ -73,7 +93,13 @@ class _TechnologyQuizState extends State<TechnologyQuiz> {
                       horizontal: 10.0,
                     ),
                     child: ElevatedButton.icon(
-                      onPressed: () {},
+                      onPressed: () {
+                        checkAnswer(false);
+                        setState(() {
+                          mainTechnology.nextQuestionNumber();
+                          mainTechnology.nextNumberOfRow();
+                        });
+                      },
                       iconAlignment: IconAlignment.end,
                       icon: Icon(
                         HugeIcons.strokeRoundedCheckUnread03,
@@ -111,7 +137,13 @@ class _TechnologyQuizState extends State<TechnologyQuiz> {
                       horizontal: 10.0,
                     ),
                     child: ElevatedButton.icon(
-                      onPressed: () {},
+                      onPressed: () {
+                        checkAnswer(true);
+                        setState(() {
+                          mainTechnology.nextQuestionNumber();
+                          mainTechnology.nextNumberOfRow();
+                        });
+                      },
                       iconAlignment: IconAlignment.end,
                       icon: Icon(
                         HugeIcons.strokeRoundedCheckmarkBadge01,
@@ -120,7 +152,7 @@ class _TechnologyQuizState extends State<TechnologyQuiz> {
                             'Cross/ close - checked Icon demonstrate false answer',
                       ),
                       label: Text(
-                        'False',
+                        'True',
                         style: TextStyle(
                           fontFamily: 'LexendExa',
                           color: Colors.white,
@@ -160,7 +192,7 @@ class _TechnologyQuizState extends State<TechnologyQuiz> {
                         vertical: 10.0,
                       ),
                       child: Text(
-                        'Number Of False: 0',
+                        'Number Of False: ${mainTechnology.getFalseNumber()}',
                         style: TextStyle(
                           fontFamily: 'LexendExa',
                           color: Colors.white,
@@ -173,7 +205,7 @@ class _TechnologyQuizState extends State<TechnologyQuiz> {
                         vertical: 10.0,
                       ),
                       child: Text(
-                        'Number Of True: 0',
+                        'Number Of True: ${mainTechnology.getTrueNumber()}',
                         style: TextStyle(
                           fontFamily: 'LexendExa',
                           color: Colors.white,
