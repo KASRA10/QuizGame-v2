@@ -12,9 +12,6 @@ class SportQuiz extends StatefulWidget {
 }
 
 class _SportQuizState extends State<SportQuiz> {
-  int falseNumber = 0;
-  int trueNumber = 0;
-
   QuestionCenterIntelligence mainSport =
       QuestionCenterIntelligence(category: 'sport');
 
@@ -24,9 +21,9 @@ class _SportQuizState extends State<SportQuiz> {
         mainSport.reset();
       } else {
         if (userAnswer == mainSport.currentAnswer()) {
-          falseNumber = mainSport.countNumberOfTrue();
+          mainSport.countNumberOfTrue();
         } else {
-          trueNumber = mainSport.countNumberOfFalse();
+          mainSport.countNumberOfFalse();
         }
       }
     });
@@ -193,7 +190,7 @@ class _SportQuizState extends State<SportQuiz> {
                         vertical: 10.0,
                       ),
                       child: Text(
-                        'Number Of False: $falseNumber',
+                        'Number Of False: ${mainSport.countNumberOfFalse()}',
                         style: TextStyle(
                           fontFamily: 'LexendExa',
                           color: Colors.white,
@@ -206,7 +203,7 @@ class _SportQuizState extends State<SportQuiz> {
                         vertical: 10.0,
                       ),
                       child: Text(
-                        'Number Of True: $trueNumber',
+                        'Number Of True: ${mainSport.countNumberOfTrue()}',
                         style: TextStyle(
                           fontFamily: 'LexendExa',
                           color: Colors.white,

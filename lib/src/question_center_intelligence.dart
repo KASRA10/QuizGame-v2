@@ -7,7 +7,7 @@ import './food_questions_list.dart';
 import './technology_questions_list.dart';
 
 class QuestionCenterIntelligence {
-  late String category;
+  late final String category;
   int _questionNumber = 0;
   int _questionRow = 1;
   bool _finishStatus = false;
@@ -33,14 +33,14 @@ class QuestionCenterIntelligence {
   void nextQuestionNumber() {
     if (_questionNumber < mainQuestionList.length - 1) {
       _questionNumber++;
-    } else if (_questionNumber == mainQuestionList.length) {
+    } else if (_questionNumber == mainQuestionList.length - 1) {
       _finishStatus = true;
     }
   }
 
   void nextNumberOfRow() {
-    if (_questionNumber < mainQuestionList.length - 1) {
-      _questionNumber++;
+    if (_questionRow < mainQuestionList.length - 1) {
+      _questionRow++;
     }
   }
 
