@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 import './question_structure.dart';
 import './sport_questions_list.dart';
 import './movie_questions_list.dart';
@@ -5,22 +7,23 @@ import './food_questions_list.dart';
 import './technology_questions_list.dart';
 
 class QuestionCenterIntelligence {
-  late String _category;
+  late String category;
   int _questionNumber = 0;
   int _questionRow = 1;
   bool _finishStatus = false;
-  List<QuestionStructure> mainQuestionList = [];
+  late final List<QuestionStructure> mainQuestionList;
+  int _numberOfTrue = 0;
+  int _numberOfFalse = 0;
 
-  void getCategory(String category) {
-    _category = category;
-
-    if (_category == 'sport') {
+  QuestionCenterIntelligence({required category}) {
+    category = category;
+    if (category == 'sport') {
       mainQuestionList = sportQuestionsList;
-    } else if (_category == 'movie') {
+    } else if (category == 'movie') {
       mainQuestionList == movieQuestionsList;
-    } else if (_category == 'food') {
+    } else if (category == 'food') {
       mainQuestionList = foodQuestionsList;
-    } else if (_category == 'technology') {
+    } else if (category == 'technology') {
       mainQuestionList = technologyQuestionsList;
     } else {
       mainQuestionList;
@@ -53,11 +56,13 @@ class QuestionCenterIntelligence {
     _questionNumber = 0;
     _questionRow = 1;
     _finishStatus = false;
+    _numberOfTrue = 0;
+    _numberOfFalse = 0;
   }
 
   String nextQuestion() => mainQuestionList[_questionNumber].question;
-
   bool currentAnswer() => mainQuestionList[_questionNumber].answer;
-
   int getQuestionRow() => _questionRow;
+  int countNumberOfTrue() => _numberOfTrue++;
+  int countNumberOfFalse() => _numberOfFalse++;
 }

@@ -3,7 +3,7 @@ class QuestionStructure {
   late bool answer;
 
   QuestionStructure({
-    required question,
-    required answer,
+    required this.question,
+    required this.answer,
   });
 }

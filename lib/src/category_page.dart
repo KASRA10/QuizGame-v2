@@ -2,15 +2,21 @@
 
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
+
 import './my_alerts.dart';
 import './sport_page.dart';
 import './movie_page.dart';
 import './food_page.dart';
 import './technology_page.dart';
 
-class CategoryPage extends StatelessWidget {
+class CategoryPage extends StatefulWidget {
   const CategoryPage({super.key});
 
+  @override
+  State<CategoryPage> createState() => _CategoryPageState();
+}
+
+class _CategoryPageState extends State<CategoryPage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(

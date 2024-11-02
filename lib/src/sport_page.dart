@@ -12,6 +12,26 @@ class SportQuiz extends StatefulWidget {
 }
 
 class _SportQuizState extends State<SportQuiz> {
+  int falseNumber = 0;
+  int trueNumber = 0;
+
+  QuestionCenterIntelligence mainSport =
+      QuestionCenterIntelligence(category: 'sport');
+
+  void checkAnswer(bool userAnswer) {
+    setState(() {
+      if (mainSport.endChecker() == true) {
+        mainSport.reset();
+      } else {
+        if (userAnswer == mainSport.currentAnswer()) {
+          falseNumber = mainSport.countNumberOfTrue();
+        } else {
+          trueNumber = mainSport.countNumberOfFalse();
+        }
+      }
+    });
+  } // End Of CheckUser Answer
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -56,7 +76,7 @@ class _SportQuizState extends State<SportQuiz> {
                   25.0,
                 ),
                 child: Text(
-                  '1) In London, UK, if you happen to die in the House of Parliament, you are technically entitled to a state funeral, because the building is considered too sacred a place.',
+                  '${mainSport.getQuestionRow()}) ${mainSport.nextQuestion()}',
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     fontFamily: 'LexendExa',
@@ -74,7 +94,13 @@ class _SportQuizState extends State<SportQuiz> {
                       horizontal: 10.0,
                     ),
                     child: ElevatedButton.icon(
-                      onPressed: () {},
+                      onPressed: () {
+                        checkAnswer(false);
+                        setState(() {
+                          mainSport.nextQuestionNumber();
+                          mainSport.nextNumberOfRow();
+                        });
+                      },
                       iconAlignment: IconAlignment.end,
                       icon: Icon(
                         HugeIcons.strokeRoundedCheckUnread03,
@@ -112,7 +138,13 @@ class _SportQuizState extends State<SportQuiz> {
                       horizontal: 10.0,
                     ),
                     child: ElevatedButton.icon(
-                      onPressed: () {},
+                      onPressed: () {
+                        checkAnswer(true);
+                        setState(() {
+                          mainSport.nextQuestionNumber();
+                          mainSport.nextNumberOfRow();
+                        });
+                      },
                       iconAlignment: IconAlignment.end,
                       icon: Icon(
                         HugeIcons.strokeRoundedCheckmarkBadge01,
@@ -121,7 +153,7 @@ class _SportQuizState extends State<SportQuiz> {
                             'Cross/ close - checked Icon demonstrate false answer',
                       ),
                       label: Text(
-                        'False',
+                        'True',
                         style: TextStyle(
                           fontFamily: 'LexendExa',
                           color: Colors.white,
@@ -161,7 +193,7 @@ class _SportQuizState extends State<SportQuiz> {
                         vertical: 10.0,
                       ),
                       child: Text(
-                        'Number Of False: 0',
+                        'Number Of False: $falseNumber',
                         style: TextStyle(
                           fontFamily: 'LexendExa',
                           color: Colors.white,
@@ -174,7 +206,7 @@ class _SportQuizState extends State<SportQuiz> {
                         vertical: 10.0,
                       ),
                       child: Text(
-                        'Number Of True: 0',
+                        'Number Of True: $trueNumber',
                         style: TextStyle(
                           fontFamily: 'LexendExa',
                           color: Colors.white,
