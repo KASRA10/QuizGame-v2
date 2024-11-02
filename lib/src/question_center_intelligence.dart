@@ -13,8 +13,7 @@ class QuestionCenterIntelligence {
   int _falseNumbers = 0;
   int _trueNumbers = 0;
 
-  QuestionCenterIntelligence({required category}) {
-    category = category;
+  QuestionCenterIntelligence({required this.category}) {
     if (category == 'sport') {
       mainQuestionList = sportQuestionsList;
     } else if (category == 'movie') {
@@ -59,6 +58,14 @@ class QuestionCenterIntelligence {
   void reset() {
     _questionNumber = -1;
     _questionRow = 0;
+    _finishStatus = false;
+    _falseNumbers = 0;
+    _trueNumbers = 0;
+  }
+
+  void middleReset() {
+    _questionNumber = 0;
+    _questionRow = 1;
     _finishStatus = false;
     _falseNumbers = 0;
     _trueNumbers = 0;

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 import './my_alerts.dart';
 import './question_center_intelligence.dart';
@@ -221,7 +222,62 @@ class _MovieQuizState extends State<MovieQuiz> {
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         floatingActionButton: FloatingActionButton(
-          onPressed: () => reStartAlert(context),
+          onPressed: () => Alert(
+            context: context,
+            title: 'Reset Game!',
+            image: Image.asset(
+              'images/reset_game.png',
+              semanticLabel: 'Two Arrows Indicates Restart The Game',
+              width: 68.0,
+              height: 68.0,
+            ),
+            content: Column(
+              children: [
+                Text(
+                  'Are You Sure To Want Reset The Game?!',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'LexendExa',
+                    fontSize: 16,
+                    textBaseline: TextBaseline.alphabetic,
+                  ),
+                ),
+              ], // End Of Children
+            ),
+            buttons: [
+              DialogButton(
+                onPressed: () {
+                  setState(() {
+                    mainMovie.middleReset();
+                    mainMovie.getFalseNumber();
+                    mainMovie.getTrueNumber();
+                  });
+                  Navigator.pop(context);
+                },
+                color: Colors.black,
+                child: Text(
+                  "Yes!",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontFamily: 'LexendExa',
+                  ),
+                ),
+              ),
+              DialogButton(
+                onPressed: () => Navigator.pop(context),
+                color: Colors.black,
+                child: Text(
+                  "No",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontFamily: 'LexendExa',
+                  ),
+                ),
+              ),
+            ], // List Of Buttons
+          ).show(),
           elevation: 0.0,
           backgroundColor: Colors.transparent,
           splashColor: Colors.grey.shade800,

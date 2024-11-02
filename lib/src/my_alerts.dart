@@ -180,58 +180,6 @@ void searchAlert(BuildContext context) => Alert(
     ).show();
 // End Of Search Alert
 
-// Restart Alert
-void reStartAlert(BuildContext context) => Alert(
-      context: context,
-      title: 'Reset Game!',
-      image: Image.asset(
-        'images/reset_game.png',
-        semanticLabel: 'Two Arrows Indicates Restart The Game',
-        width: 68.0,
-        height: 68.0,
-      ),
-      content: Column(
-        children: [
-          Text(
-            'Are You Sure To Want Reset The Game?!',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontFamily: 'LexendExa',
-              fontSize: 16,
-              textBaseline: TextBaseline.alphabetic,
-            ),
-          ),
-        ], // End Of Children
-      ),
-      buttons: [
-        DialogButton(
-          onPressed: () => Navigator.pop(context),
-          color: Colors.black,
-          child: Text(
-            "Yes!",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 16,
-              fontFamily: 'LexendExa',
-            ),
-          ),
-        ),
-        DialogButton(
-          onPressed: () => Navigator.pop(context),
-          color: Colors.black,
-          child: Text(
-            "No",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 16,
-              fontFamily: 'LexendExa',
-            ),
-          ),
-        ),
-      ], // List Of Buttons
-    ).show();
-// End Of Restart Alert
-
 // End Alert
 void endAlert(context) => Alert(
       context: context,
