@@ -3,9 +3,14 @@ import 'package:hugeicons/hugeicons.dart';
 
 import './my_alerts.dart';
 
-class TechnologyQuiz extends StatelessWidget {
+class TechnologyQuiz extends StatefulWidget {
   const TechnologyQuiz({super.key});
 
+  @override
+  State<TechnologyQuiz> createState() => _TechnologyQuizState();
+}
+
+class _TechnologyQuizState extends State<TechnologyQuiz> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(

@@ -4,9 +4,14 @@ import 'package:hugeicons/hugeicons.dart';
 import './my_alerts.dart';
 import './question_center_intelligence.dart';
 
-class SportQuiz extends StatelessWidget {
+class SportQuiz extends StatefulWidget {
   const SportQuiz({super.key});
 
+  @override
+  State<SportQuiz> createState() => _SportQuizState();
+}
+
+class _SportQuizState extends State<SportQuiz> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
